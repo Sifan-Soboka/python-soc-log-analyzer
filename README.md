@@ -1,4 +1,4 @@
-# Python SOC Log Analyzer 🔐
+# Python SOC Log Analyzer 
 
 I chose to work with SSH authentication logs because repeated failed login attempts are a pattern a security analyst might investigate when looking for possible brute-force activity.
 
