@@ -1,0 +1,83 @@
+
+# Python SOC Log Analyzer
+
+A Python-based defensive security project that analyzes OpenSSH
+authentication logs, identifies repeated failed login attempts
+within a configurable time window, and exports JSON reports.
+
+## Features
+
+- Parse OpenSSH syslog entries.
+- Extract timestamps, usernames, event types, and IP addresses.
+- Recognize failed and successful authentication events.
+- Detect repeated failed logins from the same IP within a time window.
+- Configure failure thresholds and time windows.
+- Export analysis summaries and alerts to JSON.
+- Validate behavior with automated unit tests.
+
+## Technologies
+
+- Python 3
+- Regular expressions
+- JSON
+- unittest
+- Git and GitHub
+
+## Project Structure
+
+- `src/` — Parser, detection engine, report generator, and main program.
+- `data/` — Locally stored input logs.
+- `tests/` — Automated tests.
+- `reports/` — Generated reports.
+
+## Setup
+
+Install Python 3 and clone this repository.
+
+Place an authorized or appropriately licensed OpenSSH log dataset
+at `data/openssh_sk.log`.
+
+## Run the Analyzer
+
+From the project root:
+
+```bash
+python src/main.py
+```
+
+The program prints a summary and saves its JSON report to
+`reports/analysis_report.json`.
+
+## Run Tests
+
+```bash
+python -m unittest discover -s tests -p "test_*.py" -v
+```
+
+## Detection Logic
+
+The default rule generates an alert when at least five failed
+SSH password attempts from the same IP occur within five minutes.
+
+Alerts are indicators for investigation, not proof of malicious
+activity. The rule reports the first qualifying window for each IP.
+
+## Limitations
+
+- Only selected OpenSSH log patterns are classified.
+- Syslog timestamps omit the year; a reference year is used.
+- The dataset may not represent all SSH authentication behavior.
+- Results depend on the supplied log data and configured thresholds.
+- The analyzer does not establish that an IP is malicious.
+
+## Dataset and Attribution
+
+Record the original dataset URL, publisher, applicable licence,
+and any required attribution before distributing dataset contents.
+
+Raw dataset files are excluded from version control by default.
+
+## Ethical Use
+
+This project is intended for defensive security education and
+authorized log analysis.

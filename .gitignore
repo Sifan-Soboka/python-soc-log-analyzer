@@ -1,0 +1,27 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+
+# Secrets
+.env
+.env.*
+
+# Editor settings
+.vscode/
+
+# Generated reports
+reports/*
+!reports/.gitkeep
+
+# Downloaded datasets: keep local until redistribution
+# permissions and licensing have been checked
+data/*
+!data/.gitkeep
+
+# Operating system files
+.DS_Store
+Thumbs.db
