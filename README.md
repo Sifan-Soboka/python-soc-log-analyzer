@@ -30,19 +30,10 @@ You need Python installed and an OpenSSH log file to analyze.
 
 1. Place your log file in the `data/` folder.
 2. Make sure the filename matches the path configured in `src/main.py`. The current filename is `OpenSSH_2k.log`.
-3. From the project folder, run:
-
-```bash
-python src/main.py
-```
+3. From the project folder, run: python src/main.py
 
 The analysis summary will appear in the terminal, and the JSON report will be saved to `reports/analysis_report.json`.
 
-To run the tests:
-
-```bash
-python -m unittest discover -s tests -p "test_*.py" -v
-```
 
 ## Results so far
 
